@@ -184,9 +184,9 @@ public class AzureBlobService {
 			FileUtils.deleteDirectory(targetFile);
 		} catch (Exception exception) {
 			if (exception.getMessage().contains("BlobAlreadyExists"))
-				result = "The specified document already exists";
+				result = "The specified document already exists"+exception.getMessage();
 			else
-				result = "error in merge pdf and covert into pcl file successfully";
+				result = "error in merge pdf and covert into pcl file successfully"+exception.getMessage();
 			System.out.println("Exception Message:" + exception);
 		}
 
